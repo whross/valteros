@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="styles.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="script.js" defer></script>
+      
+      <title>Service Ordering Page</title>
+   </head>
+   <body class="bg-color">
+      <header>
+         <div>
+            <h1 id="swoosh" class="brand"><img src="media/logo.png" alt="logo" id="logo"></h1>
+            <audio id="audio">
+               <source src="/media/swoosh.mp3"></source>
+             </audio>
+            <h2>Small Business IT Solutions</h2>
+         </div>
+         <nav>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="landing.html">Sign up</a></li>
+            <li><a href="orders.html">Services</a></li>
+         </nav>
+        </header>
+      <!--This script when mouseover plays the swoosh sound from audio id audio and when mouse leaves pauses the sound-->
+      <script>
+         var swoosh = document.querySelector("#swoosh");
+         var audio = document.querySelector("#audio");
+         swoosh.addEventListener("mouseover", function () {
+            audio.play();
+         });
+         swoosh.addEventListener("mouseout", function () {
+            audio.pause();
+         });
+      </script>
+      <div class="orderContainer">
+      <div class="Cart-Container">
+         <div class="Header">
+            <h3 class="Heading"><i class="fa fa-shopping-cart" style="font-size:24px"></i>  Services</h3>
+            <!-- This javascript function reloads the page when pressed-->
+            <button onclick="location.reload();">Clear All</button>
+            </div>
+            <table class="cart">
+               <tr>
+                 <th class="flexTh">Type</th>
+                 <th>Description</th>
+                 <th>Hours</th>
+                 <th>Price per Hour</th>
+                 <th class="flexTh">Total</th>
+               </tr>
+               <tr>
+                 <td class="flexTh"><img src="/media/cloud.jpg" alt=""></td>
+                 <td>Cloud Solutions<br><span id = "first" class="flexT"></span></td>
+                 <td><input type="number" class="qty" id="prod1x" min="0"  oninput="validity.valid||(value='');"></td>
+                 <td><input type="text" value="" readonly id="prod1" class="price"></td>
+                 <td class="flexTh"><span id = "first1"></span></td>
+               </tr>
+               <tr>
+                  <td class="flexTh"><img src="/media/helpdesk.png" alt=""></td>
+                 <td>Help Desk Services<br><span id = "second" class="flexT"></span></td>
+                 <td><input type="number" class="qty" id="prod2x" min="0" oninput="validity.valid||(value='');"></td>
+                 <td><input type="text" value="" readonly id="prod2" class="price"></td>
+                 <td class="flexTh"><span id = "second1"></span></td>
+                 </tr>
+                 <tr>
+                  <td class="flexTh"><img src="/media/cyber.jpg" alt=""></td>
+                 <td>Cybersecurity Solutions<br><span id = "third" class="flexT"></span></td>
+                 <td><input type="number" class="qty" id="prod3x" min="0" oninput="validity.valid||(value='');"></td>
+                 <td><input type="text" value="" readonly id="prod3" class="price"></td>
+                 <td class="flexTh"><span id = "third1"></span></td>
+                 </tr>
+                 <tr>
+                  <td class="flexTh"><img src="/media/web.jpg" alt=""></td>
+                 <td>Website Development<br><span id = "fourth" class="flexT"></span></td>
+                 <td><input type="number" class="qty" id="prod4x" min="0" oninput="validity.valid||(value='');"></td>
+                 <td><input type="text" value="" readonly id="prod4" class="price"></td>
+                 <td class="flexTh"><span id = "fourth1"></span></td>
+                 </tr>
+                 <tr>
+                  <td class="flexTh"><img src="/media/hardware.jpg" alt=""></td>
+                 <td>Hardware setup and Installs<br><span id = "fifth" class="flexT"></span></td>
+                 <td><input type="number" class="qty" id="prod5x" min="0" oninput="validity.valid||(value='');"></td>
+                 <td><input type="text" value="" readonly id="prod5" class="price"></td>
+                 <td class="flexTh"><span id = "fifth1"></span></td>
+                 </tr>
+                 <tr>
+                  <td class="flexTh"><img src="/media/pentest.png" alt=""></td>
+                 <td>Penetration Testing<br><span id = "sixth" class="flexT"></span></td>
+                 <td><input type="number" class="qty" id="prod6x" min="0" oninput="validity.valid||(value='');"></td>
+                 <td><input type="text" value="" readonly id="prod6" class="price"></td>
+                 <td class="flexTh"><span id = "sixth1"></span></td>
+                 </tr>
+                 <tr>
+                  <td class="flexTh"></td>
+                  <td class="flexTh"></td>
+                  <td class="flexTh"></td>
+                  <td></td>
+                  <td>Subtotal</td>
+                 </tr>
+                 <tr>
+                  <td class="flexTh"></td>
+                  <td class="flexTh"></td>
+                  <td class="flexTh"></td>
+                  <td><input type="button" onClick="calculateTotal()" Value="Calculate" id="calculateBtn"/></td>
+                  <td><span id = "add"></span></td>
+                 </tr> 
+             </table><br><br>
+                    <div class="container">
+                      <form action="/action_page.php" method="get">
+                            <h3>Shipping Information</h3>
+                            <label for="fname"><i class="fa fa-user"></i> First Name</label>
+                            <input type="text" id="fname" name="firstname" placeholder="First Name" class="ship" required>
+                            <label for="lname"><i class="fa fa-user"></i> First Name</label>
+                            <input type="text" id="lname" name="lastname" placeholder="Last Name" class="ship" required>
+                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email Address" class="ship" required>
+                            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                            <input type="text" id="adr" name="address" placeholder="Enter Address" class="ship">
+                            <label for="city"><i class="fa fa-institution"></i> City</label>
+                            <input type="text" id="city" name="city" placeholder="Enter City" class="ship">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" placeholder="Enter State" class="ship">
+                            <label for="zip">Zip</label>
+                            <input type="text" id="zip" name="zip" placeholder="Enter your 7 digit zipcode" class="ship" pattern="^\d{5}(?:[-\s]\d{4})?$" required>
+                            <label for="phone">Phone</label>
+                            <input type="text" id="phone" name="phone" placeholder="(nnn)nnn-nnn" class="ship" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" required>
+                           <input type="submit" value="Continue to checkout" class="btn">
+                      </form>
+                      <img src="media/map.png" id="shippingImg" alt="">
+                    </div>  
+         <footer>
+            <p>Copyright &copy; ValterosITsolutions.com<br />Contact us toll free at: <a href="tel:+1800VALTEROS">1-800-VALTEROS</a></p>
+         </footer>
+   </body>
+</html>

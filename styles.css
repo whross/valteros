@@ -1,0 +1,698 @@
+/* Applies to all pages */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+/* Landing page html ID to change background color */
+#lp {
+   background-color: black;
+}
+html {
+   background: url(media/banner.jpg) no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+body {
+   color: whitesmoke;
+   font-family: "Quicksand", sans-serif;
+   height: 100%;
+}
+
+/* Background color theme */
+
+#logo {
+   width: 300px;
+   height: 200px;
+}
+/* Header stylings */
+ul,
+nav {
+   list-style: none;
+}
+a {
+   text-decoration: none;
+   cursor: pointer;
+   color: white;
+}
+nav a {
+   font-size: 25px;
+}
+nav a:hover {
+   color: black;
+   font-weight: bold;
+   font-size: 35px;
+   animation: glow 1s ease-in-out infinite alternate;
+}
+/* creates the glow effect for the nav anchors when hovered */
+@keyframes glow {
+   from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #7bd5f8, 0 0 40px #7bd5f8, 0 0 50px #7bd5f8, 0 0 60px #7bd5f8, 0 0 70px #7bd5f8;
+   }
+   to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #7bd5f8, 0 0 40px #7bd5f8, 0 0 50px #7bd5f8, 0 0 60px #7bd5f8, 0 0 70px #7bd5f8, 0 0 80px #7bd5f8;
+   }
+}
+header {
+   position: relative;
+   top: 0;
+   left: 0;
+   z-index: 10;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 25px 50px;
+   border-bottom: #fff groove 5px;
+   animation: example;
+   animation-duration: 15s;
+   animation-iteration-count: 2;
+}
+
+@keyframes example {
+   from {
+      background-color: #2545c8;
+   }
+   to {
+      background-color: #3aacf9;
+      color: white;
+   }
+}
+
+header h2 {
+   font-size: 35px;
+}
+header nav {
+   display: flex;
+}
+
+header nav li {
+   margin: 0 15px;
+}
+header nav li:first-child {
+   margin-left: 2em;
+}
+header nav li:last-child {
+   margin-right: 2em;
+}
+
+/* article styling */
+article {
+   display: flex;
+   margin: 50px;
+   gap: 20px;
+}
+.main1 {
+   margin-left: 100px;
+   gap: 150px;
+}
+.article {
+   background-color: whitesmoke;
+   border-radius: 12px;
+   color: black;
+   padding: 20px;
+   border: black solid 5px;
+   display: flex;
+   flex-direction: column;
+}
+
+/* aside comments styling */
+article aside {
+   border: black solid 5px;
+   background-color: whitesmoke;
+   color: black;
+   border-radius: 12px;
+   font-size: 12px;
+   font-weight: bold;
+   align-items: left;
+}
+.aside {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.aside > h3 {
+   font-style: italic;
+}
+.aside p {
+   margin: 1em;
+}
+
+aside:hover {
+   background-color: #3aacf9;
+   color: whitesmoke;
+}
+
+/* Footer styling */
+
+footer > p {
+   color: white;
+   margin-top: 1em;
+   font-size: 20px;
+   font-weight: bold;
+   text-align: center;
+}
+
+.content {
+   display: flex;
+   min-height: calc(100vh - 250px);
+   margin-bottom: 20px;
+}
+footer {
+   height: 100px;
+   border-top: #fff groove 5px;
+}
+/* table styling About page */
+.form1 {
+   display: flex;
+   margin-top: 40px;
+   text-align: left;
+   justify-content: center;
+}
+
+.contact {
+   background-color: whitesmoke;
+   border: black solid 5px;
+   padding: 10px;
+   border-collapse: collapse;
+}
+
+.contact th,
+.contact td,
+.contact tr {
+   color: black;
+   padding: 5px;
+   border: black solid 2px;
+}
+.contact td a {
+   color: black;
+}
+.contact a:hover {
+   background-color: #7bd5f8;
+}
+
+.about1 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.about1 > img {
+   width: 80%;
+   margin-top: 6em;
+   height: 40em;
+   border-radius: 15px;
+}
+
+/* Main page cards */
+
+.cardWrapper {
+   padding-top: 50px;
+   margin-left: 4em;
+}
+
+.card p {
+   max-width: 200px;
+   text-align: left;
+   margin-bottom: 20px;
+   margin-left: 10px;
+   margin-right: 2px;
+   padding: 5px 5px;
+   line-height: 1.5;
+}
+
+#backUp {
+   display: none;
+   width: 200px;
+   height: 100px;
+}
+/* Makes the main logo spin when hover over */
+#logo:hover {
+   cursor: pointer;
+   animation-name: spin;
+   animation-duration: 5000ms;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+   /* transform: rotate(3deg); */
+   /* transform: rotate(0.3rad);/ */
+   /* transform: rotate(3grad); */
+   /* transform: rotate(.03turn);  */
+}
+
+@keyframes spin {
+   from {
+      transform: rotate(0deg);
+   }
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+.main h1 {
+   margin-top: 20px;
+   margin-bottom: 15px;
+   font-size: 15px;
+   font-family: "Quicksand", sans-serif;
+}
+
+.card img {
+   border-radius: 15px;
+   width: 200px;
+   height: 100px;
+}
+.card:hover {
+   background-color: #3aacf9;
+   color: white;
+}
+.card:hover p {
+   color: white;
+}
+caption {
+   width: 200px;
+}
+.card {
+   color: black;
+   border: 2px solid black;
+   border-radius: 12px;
+   background-color: whitesmoke;
+   text-align: center;
+   padding: 2px;
+   margin-top: 5px;
+}
+
+.card > p {
+   font-size: 12px;
+   width: 30vh;
+   color: black;
+}
+
+.card > h1 {
+   font-size: 20px;
+}
+
+.flexList {
+   display: none;
+}
+/*Landing page styling */
+
+#submit,
+#homeButton {
+   background-color: #3aacf9;
+   border-radius: 12px;
+   padding: 10px;
+   margin-top: 5px;
+   text-decoration: none;
+   cursor: pointer;
+   color: black;
+}
+.landing h1 {
+   font-size: 45px;
+   color: whitesmoke;
+}
+
+.landing p {
+   font-size: 30px;
+}
+input.email {
+   border-radius: 12px;
+   padding: 10px;
+   width: 20rem;
+   height: 2rem;
+}
+
+.body-landing .wrapper {
+   display: flex;
+}
+.left-landing {
+   flex: 1 1 50%;
+   height: 100%;
+}
+/* Video comes in from the left and moves to the right and back into normal position */
+video {
+   width: 100%;
+   height: 100vh;
+   border: #2545c8 groove 5px;
+   border-radius: 12px;
+   object-fit: cover;
+   position: relative;
+   animation: linear;
+   animation-name: run;
+   animation-duration: 5s;
+}
+@keyframes run {
+   0% {
+      left: -25%;
+   }
+   50% {
+      left: 15%;
+   }
+   100% {
+      left: 0;
+   }
+}
+
+.right-landing {
+   display: flex;
+   flex: 0 0 50%;
+   height: 100vh;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+/* Ordering page styling */
+.orderContainer {
+   margin: 0;
+   padding: 0;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.Cart-Container {
+   color: black;
+   width: 70%;
+   height: 98%;
+   background-color: #ffffff;
+   border-radius: 20px;
+   box-shadow: 0px 25px 40px #7bd5f8;
+}
+.Header {
+   margin: auto;
+   width: 90%;
+   height: 15%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.Cart-Container img {
+   margin-left: 10px;
+   width: 150px;
+   height: 75px;
+   border: #2f3841 solid 2px;
+   border-radius: 12px;
+}
+.cart {
+   align-items: center;
+   text-align: center;
+}
+.cart td {
+   width: 20em;
+}
+.qty {
+   text-align: center;
+   width: 6em;
+   height: 2em;
+}
+input.price {
+   font-size: 16px;
+   width: 5em;
+   height: 3em;
+   text-align: left;
+   border: none;
+}
+
+#calculateBtn {
+   width: 8em;
+   color: whitesmoke;
+   border: #2f3841 solid 3px;
+   border-radius: 12px;
+   background-color: #45a049;
+}
+
+.Heading {
+   font-size: 20px;
+   font-family: "Open Sans";
+   font-weight: 700;
+   color: #2f3841;
+}
+.Header > button {
+   width: 8em;
+   color: whitesmoke;
+   border: #2f3841 solid 3px;
+   border-radius: 12px;
+   background-color: #e44c4c;
+}
+
+/* Shipping Information */
+
+.container {
+   display: flex;
+   background-color: whitesmoke;
+   padding: 5px 20px 15px 20px;
+   border: 5px groove #7bd5f8;
+   border-radius: 3px;
+}
+
+.ship {
+   width: 100%;
+   margin-bottom: 20px;
+   padding: 12px;
+   border: 1px solid #ccc;
+   border-radius: 3px;
+}
+
+label {
+   margin-bottom: 10px;
+   display: block;
+}
+
+.icon-container {
+   margin-bottom: 20px;
+   padding: 7px 0;
+   font-size: 24px;
+}
+
+.btn {
+   background-color: #04aa6d;
+   color: whitesmoke;
+   padding: 12px;
+   margin: 10px 0;
+   border: none;
+   width: 100%;
+   height: 3em;
+   border-radius: 3px;
+   cursor: pointer;
+   font-size: 17px;
+}
+
+.btn:hover {
+   background-color: #45a049;
+}
+
+.container > form {
+   width: 50%;
+}
+
+#shippingImg {
+   width: 50%;
+   height: 88vh;
+   object-fit: cover;
+}
+/* Validations for inputs */
+
+#email:invalid,
+#phone:invalid,
+#zip:invalid,
+#fname:invalid,
+#lname:invalid {
+   background-color: RGB(255, 136, 134);
+}
+
+#email:valid,
+#phone:valid,
+#zip:valid,
+#fname:valid,
+#lname:valid {
+   background-color: #5ced73;
+}
+/* Responsive layout - when the screen is less than 768 px and when less than 425px */
+
+@media (max-width: 768px) {
+   header {
+      flex-direction: column;
+      padding: 20px 50px;
+   }
+   header h2,
+   header h1 {
+      margin-bottom: 15px;
+   }
+   header nav li {
+      margin: 0 7px;
+   }
+   .about1 {
+      display: none;
+   }
+   #shippingImg {
+      display: none;
+   }
+   .main {
+      min-height: 600px;
+   }
+   .main h1 {
+      font-size: 32px;
+   }
+   .Cart-Container th,
+   .Cart-Container td {
+      width: 4em;
+      font-size: 12px;
+   }
+   .cart {
+      width: 100%;
+   }
+
+   .flexTh {
+      display: none;
+   }
+   .cart input {
+      width: 4em;
+   }
+   .container form {
+      display: flex;
+      flex-direction: column;
+      width: 425px;
+   }
+   .Cart-Container {
+      width: 98%;
+   }
+   .main1 {
+      flex-direction: column;
+      margin-left: 0px;
+      margin-right: 0px;
+   }
+   .contact {
+      font-size: 8px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+   }
+   aside {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+   }
+   .body-landing .wrapper {
+      display: flex;
+      flex-direction: column;
+   }
+   .left-landing video {
+      text-align: center;
+      width: 100%;
+      height: 50vh;
+   }
+
+   .landing {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      width: 100%;
+      height: 50vh;
+   }
+   #submit,
+   #homeButton {
+      background-color: #7bd5f8;
+      border-radius: 12px;
+      font-weight: bold;
+      padding: 10px;
+   }
+   #homeButton {
+      margin-bottom: 10px;
+   }
+
+   h1 {
+      font-size: 45px;
+      color: #021a24;
+   }
+   .landing p {
+      font-size: 1em;
+   }
+   input.email {
+      border-radius: 12px;
+      padding: 10px;
+      width: 12em;
+      height: 2em;
+   }
+}
+@media (min-width: 769px) {
+   .flexT {
+      display: none;
+   }
+}
+
+/* accomodating screens with a max width of 425px */
+@media (max-width: 425px) {
+   nav a {
+      font-size: 20px;
+   }
+   nav {
+      display: flex;
+   }
+
+   header {
+      justify-content: center;
+      text-align: center;
+   }
+   .cardWrapper {
+      display: none;
+   }
+   #logo {
+      width: 200px;
+      height: 100px;
+   }
+   .article {
+      margin: 10px;
+      font-size: 12px;
+   }
+   header h2 {
+      font-size: 25px;
+   }
+
+   .flexList {
+      display: block;
+   }
+   .flexList h1 {
+      font-size: 16px;
+   }
+}
+/* Print styles for home page */
+@media print {
+   .aside {
+      display: none;
+   }
+
+   .pagebreak {
+      page-break-before: always;
+   }
+
+   .article {
+      font-size: 12px;
+   }
+   .cardWrapper {
+      display: none;
+   }
+
+   header {
+      color: black;
+   }
+
+   header a {
+      color: black;
+   }
+   .flexList {
+      display: block;
+   }
+   .flexList h1 {
+      font-size: 15px;
+   }
+   #logo {
+      display: none;
+   }
+   #backUp {
+      display: block;
+   }
+}
